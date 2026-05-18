@@ -1,0 +1,102 @@
+/* client/src/pages/SavedOutfitsPage.css */
+.saved-page { max-width: 1000px; }
+
+.saved-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.saved-card {
+  background: white;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.saved-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+
+/* Images */
+.saved-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 2px;
+  background: var(--sand);
+  height: 220px;
+}
+
+.saved-images .saved-img:only-child { grid-column: span 2; grid-row: span 2; }
+.saved-images .saved-img:nth-child(1):nth-last-child(2),
+.saved-images .saved-img:nth-child(2):nth-last-child(1) { grid-row: span 2; }
+
+.saved-img { overflow: hidden; }
+.saved-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+.saved-card:hover .saved-img img { transform: scale(1.05); }
+
+/* Info */
+.saved-info { padding: 16px; display: flex; flex-direction: column; gap: 12px; }
+
+.saved-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+.saved-name { font-size: 15px; font-weight: 600; margin-bottom: 2px; }
+.saved-date { font-size: 12px; color: var(--mink); }
+
+.saved-score {
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+
+.saved-items-list { display: flex; flex-direction: column; gap: 3px; }
+.saved-item-chip { font-size: 12px; color: var(--mink); text-transform: capitalize; }
+
+.saved-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.occasion-badge {
+  background: var(--cream);
+  color: var(--charcoal);
+  font-size: 12px;
+  padding: 4px 12px;
+  border-radius: 100px;
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
+.remove-btn {
+  background: transparent;
+  border: 1px solid var(--sand);
+  color: var(--mink);
+  padding: 5px 12px;
+  border-radius: 100px;
+  font-size: 12px;
+  transition: var(--transition);
+}
+
+.remove-btn:hover { border-color: #ef4444; color: #ef4444; }
+
+/* Skeleton */
+.outfit-skeleton { background: var(--sand); border-radius: var(--radius); height: 360px; animation: pulse 1.4s ease infinite; }
+
+/* Empty */
+.saved-empty {
+  text-align: center;
+  padding: 80px 40px;
+  color: var(--mink);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  background: white;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.saved-empty h3 { font-size: 20px; color: var(--charcoal); }
