@@ -51,6 +51,9 @@ app.use((err, req, res, next) => {
 });
 
 const PORT = process.env.PORT || 5000;
+app.get("/", (req, res) => {
+  res.send("StyleSync Backend API Running Successfully");
+});
 app.listen(PORT, () => console.log(`🎽 StyleSync server running on port ${PORT}`));
 
 module.exports = app;
